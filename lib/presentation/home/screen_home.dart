@@ -1,6 +1,5 @@
 import 'package:audire_application_1/drawer_item.dart';
-import 'package:audire_application_1/presentation/home/screen_home.dart';
-import 'package:audire_application_1/presentation/main_page/screen_main_page.dart';
+
 import 'package:audire_application_1/presentation/pages/sign.dart';
 
 import 'package:flutter/material.dart';
@@ -54,7 +53,7 @@ class ScreenHome extends StatelessWidget {
     }
   }
 
-  Widget headerwidget() {
+  headerwidget() {
     const CircleAvatar(radius: 40);
   }
 }

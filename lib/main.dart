@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const ScreenHome(),
+        drawer: ScreenHome(),
         appBar: AppBar(
           title: const Text('navigation bar'),
           centerTitle: true,
