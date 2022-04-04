@@ -7,6 +7,7 @@ class DrawerItem extends StatelessWidget {
       required this.icon,
       required this.onPressed})
       : super(key: key);
+
   final String name;
   final IconData icon;
   final Function() onPressed;
