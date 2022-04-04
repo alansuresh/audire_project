@@ -29,7 +29,11 @@ class _ScreenSplashState extends State<ScreenSplash> {
       body: Center(
         child: Text(
           'AUDIRE',
-          style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 60,
+              fontWeight: FontWeight.bold,
+              backgroundColor: Colors.black),
         ),
       ),
     );
@@ -42,7 +46,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
   }
 
   Future<void> gotoLogin() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 5));
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => MyLogin(),

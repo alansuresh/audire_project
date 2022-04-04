@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:audire_application_1/drawer_item.dart';
 import 'package:audire_application_1/login.dart';
+import 'package:audire_application_1/main.dart';
 import 'package:audire_application_1/presentation/pages/feedback.dart';
 import 'package:audire_application_1/presentation/pages/logout.dart';
 import 'package:audire_application_1/presentation/pages/privacy.dart';
@@ -59,7 +62,9 @@ class ScreenHome extends StatelessWidget {
               DrawerItem(
                   name: 'Log Out',
                   icon: Icons.logout,
-                  onPressed: () => onItemPressed(context, index: 3)),
+                  onPressed: () {
+                    signout(context);
+                  }),
               const SizedBox(
                 height: 30,
               ),
@@ -106,12 +111,14 @@ class ScreenHome extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => const FeedBack()));
         break;
     }
-    switch (index) {
-      case 3:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => MyLogin()));
-        break;
-    }
+  }
+
+  signout(BuildContext ctx) async {
+    final _sharedPrefs = await SharedPreferences.getInstance();
+    await _sharedPrefs.clear();
+    Navigator.of(ctx).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (ctx1) => const ScreenSplash()),
+        (route) => false);
   }
 
   Widget headerWidget() {
