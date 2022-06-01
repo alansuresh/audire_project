@@ -1,5 +1,6 @@
 import 'package:audire_application_1/login.dart';
 import 'package:audire_application_1/main.dart';
+import 'package:audire_application_1/presentation/main_page/screen_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -61,7 +62,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
       gotoLogin();
     } else {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (ctx1) => const Home()));
+          .pushReplacement(MaterialPageRoute(builder: (ctx1) => const ScreenMainPage()));
     }
   }
 }

@@ -6,7 +6,7 @@ class screenvideos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Videos'),
+      body: Center(child: Text('Videos')),
     );
   }
 }

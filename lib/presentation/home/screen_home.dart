@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:audire_application_1/drawer_item.dart';
 import 'package:audire_application_1/login.dart';
@@ -18,72 +17,83 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Material(
-        color: Colors.black,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(24.0, 80, 24, 0),
-          child: Column(
-            children: [
-              headerWidget(),
-              const SizedBox(
-                height: 40,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text("Homescreen"),
+      ),
+body: Center(child: Text("Welcome to home screen")),
+      drawer: Drawer(
+        // width: 12,
+        backgroundColor: Colors.black,
+        child: Material(
+          color: Colors.black,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24.0, 80, 24, 0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  headerWidget(),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const Divider(
+                    thickness: 1,
+                    height: 10,
+                    color: Colors.grey,
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  DrawerItem(
+                    name: 'Sign Language',
+                    icon: Icons.language,
+                    onPressed: () => onItemPressed(context, index: 0),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  DrawerItem(
+                      name: 'Privacy',
+                      icon: Icons.privacy_tip_rounded,
+                      onPressed: () => onItemPressed(context, index: 1)),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  DrawerItem(
+                      name: 'FeedBack',
+                      icon: Icons.feedback,
+                      onPressed: () => onItemPressed(context, index: 2)),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  DrawerItem(
+                      name: 'Log Out',
+                      icon: Icons.logout,
+                      onPressed: () {
+                        signout(context);
+                      }),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const Divider(
+                    thickness: 1,
+                    height: 10,
+                    color: Colors.grey,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  DrawerItem(
+                      name: 'Setting',
+                      icon: Icons.settings,
+                      onPressed: () => onItemPressed(context, index: 4)),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                ],
               ),
-              const Divider(
-                thickness: 1,
-                height: 10,
-                color: Colors.grey,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              DrawerItem(
-                name: 'Sign Language',
-                icon: Icons.language,
-                onPressed: () => onItemPressed(context, index: 0),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              DrawerItem(
-                  name: 'Privacy',
-                  icon: Icons.privacy_tip_rounded,
-                  onPressed: () => onItemPressed(context, index: 1)),
-              const SizedBox(
-                height: 30,
-              ),
-              DrawerItem(
-                  name: 'FeedBack',
-                  icon: Icons.feedback,
-                  onPressed: () => onItemPressed(context, index: 2)),
-              const SizedBox(
-                height: 30,
-              ),
-              DrawerItem(
-                  name: 'Log Out',
-                  icon: Icons.logout,
-                  onPressed: () {
-                    signout(context);
-                  }),
-              const SizedBox(
-                height: 30,
-              ),
-              const Divider(
-                thickness: 1,
-                height: 10,
-                color: Colors.grey,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              DrawerItem(
-                  name: 'Setting',
-                  icon: Icons.settings,
-                  onPressed: () => onItemPressed(context, index: 4)),
-              const SizedBox(
-                height: 30,
-              ),
-            ],
+            ),
           ),
         ),
       ),

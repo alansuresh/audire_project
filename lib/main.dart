@@ -12,7 +12,8 @@ const SAVE_KEY_NAME = 'UserLoggedIn';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: const ScreenSplash(),
+    // home: const Home(),
+    home: ScreenSplash(),
     routes: {
       'register': (context) => const MyRegister(),
       'login': (context) => MyLogin(),
